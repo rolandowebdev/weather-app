@@ -1,7 +1,9 @@
 function App() {
   return (
-    <div className='App'>
-      <h1>TEST</h1>
+    <div>
+      <h1 className='text-6xl text-rose-600 font-bold text-center'>
+        Weather App
+      </h1>
     </div>
   );
 }
