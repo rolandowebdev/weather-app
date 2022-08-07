@@ -1,14 +1,30 @@
+import { useEffect } from 'react';
+
+// components
 import Search from './components/search/Search';
 import Location from './components/location/Location';
 import WeatherStatus from './components/weatherStatus/WeatherStatus';
 import HourlyStatus from './components/hourlyStatus/HourlyStatus';
 
+// icons
 import clear from './assets/icons/clear.svg';
 import rain from './assets/icons/rain.svg';
 import thunderstorm from './assets/icons/thunderstorm.svg';
 import location from './assets/icons/location.svg';
 
+// api
+import getFormattedWeatherData from './service/weather';
+
 function App() {
+  const fetchWeather = async () => {
+    const data = await getFormattedWeatherData({ q: 'dubai' });
+    console.log(data);
+  };
+
+  useEffect(() => {
+    fetchWeather();
+  }, []);
+
   return (
     <div className='z-10 max-w-xl mx-auto'>
       <div className='flex items-center w-full gap-3 '>
