@@ -1,13 +1,25 @@
-export default function Search() {
+import { useState } from 'react';
+
+export default function Search({ setQuery }) {
+  const [city, setCity] = useState('');
+
+  const handleSearchCity = () => {
+    if (city !== '') setQuery({ q: city });
+  };
+
   return (
     <div className='w-full form-control'>
       <div className='input-group'>
         <input
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
           type='text'
-          placeholder='Search…'
+          placeholder='Search by city...'
           className='w-full border-r-0 input input-bordered bg-white/5 border-slate-600'
         />
-        <button className='cursor-pointer btn hover:bg-slate-900 hover:border-slate-600 btn-square bg-slate-800 border-slate-600'>
+        <button
+          onClick={handleSearchCity}
+          className='cursor-pointer btn hover:bg-slate-900 hover:border-slate-600 btn-square bg-slate-800 border-slate-600'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='w-6 h-6'

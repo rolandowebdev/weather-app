@@ -10,7 +10,7 @@ import getFormattedWeatherData from './service/weather';
 import Hourly from './components/layout/Hourly';
 
 function App() {
-  const [query, setQuery] = useState({ q: 'mekkah' });
+  const [query, setQuery] = useState({ q: 'jakarta' });
   const [units, setUnits] = useState('metric');
   const [weather, setWeather] = useState(null);
 
@@ -26,8 +26,8 @@ function App() {
   return (
     <div className='z-10 max-w-xl mx-auto'>
       <div className='flex items-center w-full gap-3 '>
-        <Search />
-        <Location />
+        <Search setQuery={setQuery} />
+        <Location setQuery={setQuery} />
       </div>
       {weather ? (
         <main className='mt-8'>

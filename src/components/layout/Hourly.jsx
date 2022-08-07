@@ -11,6 +11,7 @@ export default function Hourly({ weather }) {
           <HourlyStatus
             key={index}
             hour={hour.title}
+            temp={`${hour.temp.toFixed()}°`}
             icon={rain}
             wind={`${hour.wind_speed}km/h`}
           />

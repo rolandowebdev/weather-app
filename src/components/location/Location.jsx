@@ -1,6 +1,22 @@
-export default function Location() {
+export default function Location({ setQuery }) {
+  const handleLocationClick = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+
+        setQuery({
+          lat,
+          lon,
+        });
+      });
+    }
+  };
+
   return (
-    <button className='btn btn-square border-slate-600 bg-slate-800 hover:bg-slate-900 hover:border-slate-600'>
+    <button
+      onClick={handleLocationClick}
+      className='btn btn-square border-slate-600 bg-slate-800 hover:bg-slate-900 hover:border-slate-600'>
       <svg
         className='w-6 h-6'
         viewBox='0 0 24 24'
