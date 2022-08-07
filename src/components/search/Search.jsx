@@ -15,11 +15,11 @@ export default function Search({ setQuery }) {
           onChange={(e) => setCity(e.target.value)}
           type='text'
           placeholder='Search by city...'
-          className='w-full border-r-0 input input-bordered bg-white/5 border-slate-600'
+          className='w-full border-r-0 input input-bordered bg-black/50 backdrop-blur-sm border-black/50'
         />
         <button
           onClick={handleSearchCity}
-          className='cursor-pointer btn hover:bg-slate-900 hover:border-slate-600 btn-square bg-slate-800 border-slate-600'>
+          className='z-10 cursor-pointer btn bg-black/50 hover:bg-black backdrop-blur-sm border-black/50'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='w-6 h-6'

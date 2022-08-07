@@ -8,14 +8,16 @@ import location from '../../assets/icons/location.svg';
 export default function Daily({ weather }) {
   return (
     <section className='flex items-end justify-between mx-auto text-center sm:flex-row'>
-      <div>
+      <div className='z-10'>
         <h1 className='font-semibold text-[164px] leading-none'>
           {`${weather.temp.toFixed()}`}°
         </h1>
         <div className='flex flex-col items-start gap-3'>
           <div className='flex items-center justify-center gap-2'>
             <img className='w-6 h-6 stroke-2' src={location} alt='location' />
-            <p className='text-lg'>{weather.name}</p>
+            <p className='text-lg'>
+              {weather.name}, {weather.country}
+            </p>
           </div>
           <WeatherStatus
             icon={clear}
@@ -24,7 +26,7 @@ export default function Daily({ weather }) {
           />
         </div>
       </div>
-      <div className='flex flex-col items-start gap-4 px-4 pt-2 pb-4 rounded-md bg-white/5'>
+      <div className='flex flex-col items-start gap-4 px-4 pt-2 pb-4 rounded-md bg-black/75 backdrop-blur-sm'>
         <h2 className='text-2xl font-bold'>3 day forecast</h2>
         {weather.daily.map((day, index) => (
           <WeatherStatus

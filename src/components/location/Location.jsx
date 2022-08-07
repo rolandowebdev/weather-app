@@ -16,7 +16,7 @@ export default function Location({ setQuery }) {
   return (
     <button
       onClick={handleLocationClick}
-      className='btn btn-square border-slate-600 bg-slate-800 hover:bg-slate-900 hover:border-slate-600'>
+      className='btn z-10 btn-square bg-black/50 hover:bg-black backdrop-blur-sm border-black/50'>
       <svg
         className='w-6 h-6'
         viewBox='0 0 24 24'

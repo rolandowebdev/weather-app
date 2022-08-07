@@ -1,17 +1,19 @@
 import sunset from '../../assets/icons/sunset.svg';
 import clear from '../../assets/icons/clear.svg';
 
+import { formatTime } from '../../service/weather';
+
 export default function Details({ weather }) {
   return (
-    <section className='mt-8 bg-white/5 px-3 py-4 rounded-md'>
+    <section className='mt-10 bg-black/75 backdrop-blur-sm px-3 py-4 rounded-md'>
       <div className='flex justify-between items-center px-4 mb-9'>
         <div className='flex flex-col items-center gap-1'>
           <img className='w-6 h-6' src={clear} alt='sunrise' />
-          <p className='text-xs'>Sunrise 06.17</p>
+          <p className='text-xs mt-1'>Sunrise {formatTime(weather.sunrise)}</p>
         </div>
         <div className='flex flex-col items-center gap-1'>
           <img className='w-6 h-6' src={sunset} alt='sunset' />
-          <p className='text-xs'>Sunset 18.16</p>
+          <p className='text-xs mt-1'>Sunset {formatTime(weather.sunset)}</p>
         </div>
       </div>
       <ul className='flex justify-between items-center flex-wrap px-3'>
