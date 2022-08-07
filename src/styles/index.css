@@ -1,3 +1,6 @@
+/* font family */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +9,6 @@
 
 @layer base {
   body {
-    @apply min-h-screen bg-gradient-to-t from-slate-700 to-slate-800;
+    @apply min-h-screen bg-gradient-to-t px-4 from-slate-700 to-slate-800 py-8 font-poppins;
   }
 }
