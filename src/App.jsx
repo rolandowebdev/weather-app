@@ -1,6 +1,7 @@
 import Search from './components/search/Search';
 import Location from './components/location/Location';
 import WeatherStatus from './components/weatherStatus/WeatherStatus';
+import HourlyStatus from './components/hourlyStatus/HourlyStatus';
 
 import clear from './assets/icons/clear.svg';
 import rain from './assets/icons/rain.svg';
@@ -14,8 +15,8 @@ function App() {
         <Search />
         <Location />
       </div>
-      <main className='mt-16'>
-        <section className='flex items-end justify-between mx-auto mb-24 text-center'>
+      <main className='mt-8'>
+        <section className='flex items-end justify-between mx-auto text-center sm:flex-row'>
           <div>
             <h1 className='font-semibold text-[164px] leading-none'>27°</h1>
             <div className='flex flex-col items-start gap-3'>
@@ -30,7 +31,7 @@ function App() {
               <WeatherStatus icon={clear} day='Today' status='Clear' />
             </div>
           </div>
-          <div className='flex flex-col items-start gap-4 px-4 pt-1 pb-4 rounded-md bg-white/5'>
+          <div className='flex flex-col items-start gap-4 px-4 pt-2 pb-4 rounded-md bg-white/5'>
             <h2 className='text-2xl font-bold divider'>3 day forecast</h2>
             <WeatherStatus
               icon={thunderstorm}
@@ -39,6 +40,16 @@ function App() {
             />
             <WeatherStatus icon={rain} day='Wednesday' status='Rain' />
             <WeatherStatus icon={clear} day='Thursday' status='Clear' />
+          </div>
+        </section>
+        <section className='mt-20'>
+          <h2 className='text-3xl font-semibold'>Hourly forecast</h2>
+          <span className='my-3 divider'></span>
+          <div className='flex justify-around rounded-md bg-white/5'>
+            <HourlyStatus hour='Now' icon={rain} wind='13.5km/h' />
+            <HourlyStatus hour='13:00' icon={rain} wind='11.5km/h' />
+            <HourlyStatus hour='14:00' icon={rain} wind='11.1km/h' />
+            <HourlyStatus hour='15:00' icon={rain} wind='13.0km/h' />
           </div>
         </section>
       </main>

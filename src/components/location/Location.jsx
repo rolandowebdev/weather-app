@@ -1,6 +1,6 @@
 export default function Location() {
   return (
-    <button className='btn btn-square'>
+    <button className='btn btn-square border-slate-600 bg-slate-800 hover:bg-slate-900 hover:border-slate-600'>
       <svg
         className='w-6 h-6'
         viewBox='0 0 24 24'

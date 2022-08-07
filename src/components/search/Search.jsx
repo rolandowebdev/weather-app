@@ -5,9 +5,9 @@ export default function Search() {
         <input
           type='text'
           placeholder='Search…'
-          className='w-full input input-bordered'
+          className='w-full border-r-0 input input-bordered bg-white/5 border-slate-600'
         />
-        <button className='cursor-pointer btn btn-square'>
+        <button className='cursor-pointer btn hover:bg-slate-900 hover:border-slate-600 btn-square bg-slate-800 border-slate-600'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='w-6 h-6'
