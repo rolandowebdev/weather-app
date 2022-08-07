@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base Style */
+
+@layer base {
+  body {
+    @apply min-h-screen bg-gradient-to-t from-slate-700 to-slate-800;
+  }
+}
