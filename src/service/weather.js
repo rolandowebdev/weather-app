@@ -15,7 +15,15 @@ const getWeatherData = (infoType, searchParams) => {
 const formatCurrentWeather = (data) => {
     const {
         coord: { lat, lon },
-        main: { temp, feels_like, temp_min, temp_max, humidity },
+        main: {
+            temp,
+            feels_like,
+            temp_min,
+            temp_max,
+            humidity,
+            pressure,
+            grnd_level,
+        },
         name,
         dt,
         sys: { country, sunrise, sunset },
@@ -41,6 +49,8 @@ const formatCurrentWeather = (data) => {
         details,
         icon,
         speed,
+        pressure,
+        grnd_level,
     };
 };
 
@@ -89,7 +99,7 @@ const getFormattedWeatherData = async(searchParams) => {
 const formatToLocalTime = (secs, zone, format = 'cccc') =>
     DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-const iconUrl = (code) => `http://openweathermap.org/img/wn/${code}@2x.png`;
+const iconUrl = (icon) => `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
 export default getFormattedWeatherData;
 

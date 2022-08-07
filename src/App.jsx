@@ -8,6 +8,7 @@ import Daily from './components/layout/Daily';
 // api
 import getFormattedWeatherData from './service/weather';
 import Hourly from './components/layout/Hourly';
+import Details from './components/layout/Details';
 
 function App() {
   const [query, setQuery] = useState({ q: 'jakarta' });
@@ -18,6 +19,7 @@ function App() {
     const fetchWeather = async () => {
       const data = await getFormattedWeatherData({ ...query, units });
       setWeather(data);
+      console.log(data);
     };
 
     fetchWeather();
@@ -27,18 +29,22 @@ function App() {
     <div className='z-10 max-w-xl mx-auto'>
       <div className='flex items-center w-full gap-3 '>
         <Search setQuery={setQuery} />
+
         <Location setQuery={setQuery} />
       </div>
-      {weather ? (
-        <main className='mt-8'>
-          <Daily weather={weather} />
-          <Hourly weather={weather} />
-        </main>
-      ) : (
-        <div className='text-center flex justify-center items-center mt-64 text-3xl font-bold'>
-          Country is not defined!
-        </div>
-      )}
+      <main className='mt-8'>
+        {weather ? (
+          <>
+            <Daily weather={weather} />
+            <Hourly weather={weather} />
+            <Details weather={weather} />
+          </>
+        ) : (
+          <div className='text-center flex justify-center items-center text-3xl font-bold'>
+            City is not defined!
+          </div>
+        )}
+      </main>
     </div>
   );
 }
