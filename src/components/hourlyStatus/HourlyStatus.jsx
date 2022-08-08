@@ -8,8 +8,8 @@ export default function HourlyStatus({ icon, hour, wind, temp }) {
       <p className='text-sm font-light text-slate-400'>{hour}</p>
       <p className='mb-2 font-semibold'>{temp}</p>
       <img className='w-8 h-8 mx-auto' src={icon} alt='rain' />
-      <div className='flex items-end'>
-        <img className='w-5 h-5 mx-auto p-1' src={windIcon} alt='rain' />
+      <div className='flex flex-col items-center text-center sm:items-end sm:flex-row'>
+        <img className='w-5 h-5 p-1' src={windIcon} alt='rain' />
         <p className='mt-3 text-xs font-light text-slate-400'>{wind}</p>
       </div>
     </div>

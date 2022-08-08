@@ -30,11 +30,13 @@ function App() {
     <div className="px-4 bg-[url('../assets/images/weather.jpg')] py-8 bg-cover bg-no-repeat bg-center bg-fixed min-h-screen">
       <div className='absolute inset-0 bg-black/50'></div>
       <div className='z-10 max-w-xl mx-auto'>
-        <div className='flex items-center w-full gap-3 '>
+        <div className='flex flex-col items-center w-full gap-3 sm:flex-row '>
           <Search setQuery={setQuery} />
-          <Celcius units={units} setUnits={setUnits} />
-          <Fahrenheit units={units} setUnits={setUnits} />
-          <Location setQuery={setQuery} />
+          <div className='flex gap-2'>
+            <Celcius units={units} setUnits={setUnits} />
+            <Fahrenheit units={units} setUnits={setUnits} />
+            <Location setQuery={setQuery} />
+          </div>
         </div>
         {weather && (
           <main className='mt-8'>

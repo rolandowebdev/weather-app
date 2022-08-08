@@ -5,12 +5,12 @@ import location from '../../assets/icons/location.svg';
 
 export default function Daily({ weather }) {
   return (
-    <section className='flex items-end justify-between mx-auto text-center sm:flex-row'>
+    <section className='flex flex-col justify-between mx-auto text-center sm:items-end sm:flex-row'>
       <div className='z-10'>
         <h1 className='font-semibold text-[164px] leading-none'>
           {`${weather.temp.toFixed()}`}°
         </h1>
-        <div className='flex flex-col items-start'>
+        <div className='flex flex-col items-start mb-4 sm:mb-0'>
           <div className='flex items-center justify-center gap-1'>
             <img
               className='w-8 h-8 p-1 stroke-2'
