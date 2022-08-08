@@ -1,5 +1,5 @@
+import { iconUrl } from '../../service/weather';
 import HourlyStatus from '../hourlyStatus/HourlyStatus';
-import rain from '../../assets/icons/rain.svg';
 
 export default function Hourly({ weather }) {
   return (
@@ -10,7 +10,7 @@ export default function Hourly({ weather }) {
             key={index}
             hour={hour.title}
             temp={`${hour.temp.toFixed()}°`}
-            icon={rain}
+            icon={iconUrl(hour.icon)}
             wind={`${hour.wind_speed}km/h`}
           />
         ))}

@@ -1,8 +1,6 @@
 import WeatherStatus from '../weatherStatus/WeatherStatus';
-import { formatToLocalTime } from '../../service/weather';
+import { formatToLocalTime, iconUrl } from '../../service/weather';
 
-import clear from '../../assets/icons/clear.svg';
-import thunderstorm from '../../assets/icons/thunderstorm.svg';
 import location from '../../assets/icons/location.svg';
 
 export default function Daily({ weather }) {
@@ -12,15 +10,19 @@ export default function Daily({ weather }) {
         <h1 className='font-semibold text-[164px] leading-none'>
           {`${weather.temp.toFixed()}`}°
         </h1>
-        <div className='flex flex-col items-start gap-3'>
-          <div className='flex items-center justify-center gap-2'>
-            <img className='w-6 h-6 stroke-2' src={location} alt='location' />
-            <p className='text-lg'>
+        <div className='flex flex-col items-start'>
+          <div className='flex items-center justify-center gap-1'>
+            <img
+              className='w-8 h-8 p-1 stroke-2'
+              src={location}
+              alt='location'
+            />
+            <p className='text-md'>
               {weather.name}, {weather.country}
             </p>
           </div>
           <WeatherStatus
-            icon={clear}
+            icon={iconUrl(weather.icon)}
             day={formatToLocalTime(weather.dt)}
             status={weather.details}
           />
@@ -31,7 +33,7 @@ export default function Daily({ weather }) {
         {weather.daily.map((day, index) => (
           <WeatherStatus
             key={index}
-            icon={thunderstorm}
+            icon={iconUrl(day.icon)}
             day={day.title}
             status={day.weather}
           />
